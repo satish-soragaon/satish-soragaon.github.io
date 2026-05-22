@@ -3,87 +3,165 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Portfolio</title>
+    <meta name="description" content="Satish Soragaon — Computer Science graduate. AI/ML enthusiast, web developer, and project builder from Vijayapur.">
+    <meta name="theme-color" content="#0b5fff">
+    <title>Satish Soragaon — Portfolio</title>
+    <link rel="icon" href="favicon.ico" />
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            background-color: #f4f4f4;
-        }
-        header {
-            background-color: #333;
-            color: white;
-            padding: 15px 0;
-            text-align: center;
-        }
-        nav a {
-            color: white;
-            margin: 0 15px;
-            text-decoration: none;
-        }
-        section {
-            padding: 20px;
-            margin: 20px;
-            background: white;
-            border-radius: 8px;
-        }
-        h2 {
-            color: #333;
-        }
-        .projects div {
-            margin-bottom: 10px;
-            padding: 10px;
-            background: #eee;
-            border-radius: 5px;
-        }
-        footer {
-            text-align: center;
-            padding: 10px;
-            background: #333;
-            color: white;
-        }
+        :root{--accent:#0b5fff;--muted:#6b7280;--bg:#f4f7fb;--card:#ffffff}
+        *{box-sizing:border-box}
+        body{font-family:Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial; margin:0;background:var(--bg);color:#0f172a}
+        header{background:linear-gradient(90deg,var(--accent),#0a74ff);color:white;padding:40px 16px;text-align:center}
+        .container{max-width:1000px;margin:0 auto;padding:24px}
+        nav{margin-top:8px}
+        nav a{color:rgba(255,255,255,0.95);margin:0 10px;text-decoration:none;font-weight:600}
+        .hero{display:flex;gap:20px;align-items:center;flex-wrap:wrap;justify-content:center}
+        .avatar{width:120px;height:120px;border-radius:12px;background:#fff;display:flex;align-items:center;justify-content:center;overflow:hidden}
+        .avatar img{width:100%;height:100%;object-fit:cover}
+        h1{margin:0;font-size:28px}
+        p.lead{margin:6px 0;color:var(--muted)}
+        section{background:var(--card);border-radius:12px;padding:20px;margin:20px 0;box-shadow:0 6px 18px rgba(11,77,255,0.06)}
+        h2{margin-top:0;color:#06204a}
+        .grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+        .full{grid-column:1/-1}
+        .skill{display:flex;align-items:center;justify-content:space-between;margin-bottom:8px}
+        .skill .bar{flex:1;height:10px;background:#e6eefc;border-radius:6px;margin-left:12px;overflow:hidden}
+        .skill .bar > i{display:block;height:100%;background:var(--accent)}
+        .projects .project{padding:12px;border-radius:8px;background:#f8fafc;border:1px solid #edf2ff}
+        .tags{display:flex;gap:8px;flex-wrap:wrap;margin-top:8px}
+        .tag{background:#eef4ff;color:var(--accent);padding:6px 8px;border-radius:999px;font-size:12px}
+        footer{text-align:center;padding:16px;color:var(--muted)}
+        .social a{margin-right:8px;color:var(--accent);text-decoration:none;font-weight:600}
+        form input,form textarea{width:100%;padding:10px;border:1px solid #e6edf7;border-radius:8px;margin-top:8px}
+        form button{background:var(--accent);color:white;padding:10px 14px;border:0;border-radius:8px;cursor:pointer}
+        @media(max-width:760px){.grid{grid-template-columns:1fr}.hero{flex-direction:column}.avatar{width:96px;height:96px}}
     </style>
 </head>
 <body>
 
 <header>
-    <h1>Satish Soragaon</h1>
-    <p>Student | Developer | Learner</p>
-    <nav>
-        <a href="#about">About</a>
-        <a href="#projects">Projects</a>
-        <a href="#contact">Contact</a>
-    </nav>
+    <div class="container">
+        <div class="hero">
+            <div class="avatar">
+                <img src="https://avatars.githubusercontent.com/u/" alt="Profile photo">
+            </div>
+            <div>
+                <h1>Satish Soragaon</h1>
+                <p class="lead">Computer Science graduate • AI/ML enthusiast • Web developer</p>
+                <nav>
+                    <a href="#about">About</a>
+                    <a href="#skills">Skills</a>
+                    <a href="#projects">Projects</a>
+                    <a href="#contact">Contact</a>
+                </nav>
+            </div>
+        </div>
+    </div>
 </header>
 
-<section id="about">
-    <h2>About Me</h2>
-    <p>I am a newly graduated Computer Science student specialized in Artificial Intelligence and Machine Learning from Vijayapur.</p>
-    <p>I enjoy exploring how intelligent systems, data, and software can solve real-world problems.</p>
-    <p>I have a strong interest in web development, machine learning, and building practical projects that improve my skills.</p>
-    <p>As a curious learner, I am excited to grow as a developer and contribute to meaningful technology solutions.</p>
-</section>
+<main class="container">
+    <section id="about">
+        <h2>About Me</h2>
+        <p>I recently graduated with a degree in Computer Science from Vijayapur, specializing in Artificial Intelligence and Machine Learning. I build web and ML projects that solve real problems and help me learn end-to-end development.</p>
+        <div class="grid">
+            <div>
+                <h3>Education</h3>
+                <p><strong>Bachelor of Computer Science</strong><br>University Name — Graduated 2026</p>
+            </div>
+            <div>
+                <h3>Experience</h3>
+                <p><strong>Intern — AI Research</strong><br>Worked on model prototyping and data pipelines (3 months).</p>
+            </div>
+            <div class="full">
+                <h3>What I build</h3>
+                <p>Web apps, data-driven dashboards, and ML prototypes using Python, TensorFlow/PyTorch, and modern JavaScript frameworks.</p>
+            </div>
+        </div>
+    </section>
 
-<section id="projects" class="projects">
-    <h2>Projects</h2>
-    <div>
-        <h3>Project 1</h3>
-        <p>Description of your project.</p>
-    </div>
-    <div>
-        <h3>Project 2</h3>
-        <p>Description of your project.</p>
-    </div>
-</section>
+    <section id="skills">
+        <h2>Skills</h2>
+        <div class="grid">
+            <div>
+                <h4>Programming</h4>
+                <div class="skill">Python <div class="bar"><i style="width:90%"></i></div></div>
+                <div class="skill">JavaScript <div class="bar"><i style="width:75%"></i></div></div>
+                <div class="skill">C/C++ <div class="bar"><i style="width:60%"></i></div></div>
+            </div>
+            <div>
+                <h4>Machine Learning</h4>
+                <div class="skill">Modeling <div class="bar"><i style="width:80%"></i></div></div>
+                <div class="skill">Data Processing <div class="bar"><i style="width:80%"></i></div></div>
+                <div class="skill">Deployment <div class="bar"><i style="width:55%"></i></div></div>
+            </div>
+        </div>
+    </section>
 
-<section id="contact">
-    <h2>Contact</h2>
-    <p>Email: your@email.com</p>
-</section>
+    <section id="projects" class="projects">
+        <h2>Projects</h2>
+        <div class="project">
+            <h3><a href="#" target="_blank">Smart Notes — Web app</a></h3>
+            <p>A note-taking web app with tagging and search powered by a lightweight ML-based summarizer.</p>
+            <div class="tags"><span class="tag">React</span><span class="tag">Node.js</span><span class="tag">Python</span><span class="tag">ML</span></div>
+        </div>
+        <div class="project" style="margin-top:12px">
+            <h3><a href="#" target="_blank">Image Classifier</a></h3>
+            <p>Transfer learning model that classifies images with a Flask API and simple UI demo.</p>
+            <div class="tags"><span class="tag">TensorFlow</span><span class="tag">Flask</span><span class="tag">Docker</span></div>
+        </div>
+        <p style="margin-top:12px;color:var(--muted)">More projects on <a href="https://github.com/satish-soragaon" target="_blank">GitHub</a>.</p>
+    </section>
+
+    <section id="contact">
+        <h2>Contact</h2>
+        <p>If you'd like to work together or have questions, send a message or email me directly.</p>
+        <div class="grid">
+            <div>
+                <h4>Get in touch</h4>
+                <p>Email: <a href="mailto:satish@example.com">satish@example.com</a></p>
+                <p class="social">
+                    <a href="https://github.com/satish-soragaon" target="_blank">GitHub</a>
+                    <a href="#" target="_blank">LinkedIn</a>
+                </p>
+                <p><a href="/resume.pdf" target="_blank">Download Resume</a></p>
+            </div>
+            <div>
+                <h4>Message</h4>
+                <form id="contactForm">
+                    <label for="name">Name</label>
+                    <input id="name" name="name" required placeholder="Your name">
+                    <label for="email">Email</label>
+                    <input id="email" name="email" type="email" required placeholder="you@domain.com">
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" rows="5" required placeholder="Brief message"></textarea>
+                    <button type="submit">Send</button>
+                </form>
+                <p id="formStatus" style="color:var(--muted);margin-top:8px"></p>
+            </div>
+        </div>
+    </section>
+</main>
 
 <footer>
-    <p>© 2026 Your Name</p>
+    <div class="container">
+        <p>© 2026 Satish Soragaon • Built with care</p>
+    </div>
 </footer>
+
+<script>
+document.getElementById('contactForm').addEventListener('submit', function(e){
+    e.preventDefault();
+    const name = document.getElementById('name').value.trim();
+    const email = document.getElementById('email').value.trim();
+    const message = document.getElementById('message').value.trim();
+    const status = document.getElementById('formStatus');
+    if(!name||!email||!message){ status.textContent='Please fill all fields.'; return }
+    // Fallback: open default mail client
+    const mailto = `mailto:satish@example.com?subject=${encodeURIComponent('Portfolio contact from '+name)}&body=${encodeURIComponent(message+'\n\nFrom: '+name+' <'+email+'>')}`;
+    window.location.href = mailto;
+    status.textContent = 'Opening mail client...';
+});
+</script>
 
 </body>
 </html>
