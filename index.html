@@ -1,167 +1,260 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Satish Soragaon — Computer Science graduate. AI/ML enthusiast, web developer, and project builder from Vijayapur.">
-    <meta name="theme-color" content="#0b5fff">
-    <title>Satish Soragaon — Portfolio</title>
-    <link rel="icon" href="favicon.ico" />
-    <style>
-        :root{--accent:#0b5fff;--muted:#6b7280;--bg:#f4f7fb;--card:#ffffff}
-        *{box-sizing:border-box}
-        body{font-family:Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial; margin:0;background:var(--bg);color:#0f172a}
-        header{background:linear-gradient(90deg,var(--accent),#0a74ff);color:white;padding:40px 16px;text-align:center}
-        .container{max-width:1000px;margin:0 auto;padding:24px}
-        nav{margin-top:8px}
-        nav a{color:rgba(255,255,255,0.95);margin:0 10px;text-decoration:none;font-weight:600}
-        .hero{display:flex;gap:20px;align-items:center;flex-wrap:wrap;justify-content:center}
-        .avatar{width:120px;height:120px;border-radius:12px;background:#fff;display:flex;align-items:center;justify-content:center;overflow:hidden}
-        .avatar img{width:100%;height:100%;object-fit:cover}
-        h1{margin:0;font-size:28px}
-        p.lead{margin:6px 0;color:var(--muted)}
-        section{background:var(--card);border-radius:12px;padding:20px;margin:20px 0;box-shadow:0 6px 18px rgba(11,77,255,0.06)}
-        h2{margin-top:0;color:#06204a}
-        .grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
-        .full{grid-column:1/-1}
-        .skill{display:flex;align-items:center;justify-content:space-between;margin-bottom:8px}
-        .skill .bar{flex:1;height:10px;background:#e6eefc;border-radius:6px;margin-left:12px;overflow:hidden}
-        .skill .bar > i{display:block;height:100%;background:var(--accent)}
-        .projects .project{padding:12px;border-radius:8px;background:#f8fafc;border:1px solid #edf2ff}
-        .tags{display:flex;gap:8px;flex-wrap:wrap;margin-top:8px}
-        .tag{background:#eef4ff;color:var(--accent);padding:6px 8px;border-radius:999px;font-size:12px}
-        footer{text-align:center;padding:16px;color:var(--muted)}
-        .social a{margin-right:8px;color:var(--accent);text-decoration:none;font-weight:600}
-        form input,form textarea{width:100%;padding:10px;border:1px solid #e6edf7;border-radius:8px;margin-top:8px}
-        form button{background:var(--accent);color:white;padding:10px 14px;border:0;border-radius:8px;cursor:pointer}
-        @media(max-width:760px){.grid{grid-template-columns:1fr}.hero{flex-direction:column}.avatar{width:96px;height:96px}}
-    </style>
-</head>
-<body>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1">
+        <meta name="description" content="Satish — Computer Science Student (AI & ML). Portfolio showcasing AgriVision and Fake News Detection using LLM.">
+        <title>Satish — Portfolio</title>
+        <meta name="theme-color" content="#0b1220">
+        <style>
+            /* Dark modern theme */
+            :root{
+                --bg:#0b0f14;--card:#0f1720;--muted:#9aa6b2;--accent:#00d4ff;--glass:rgba(255,255,255,0.03)
+            }
+            *{box-sizing:border-box}
+            html,body{height:100%;margin:0;font-family:Inter,ui-sans-serif,system-ui,-apple-system,'Segoe UI',Roboto,'Helvetica Neue',Arial;color:#e6eef6;background:linear-gradient(180deg,var(--bg),#061018)}
+            a{color:var(--accent);text-decoration:none}
+            .site{max-width:1100px;margin:0 auto;padding:28px}
 
-<header>
-    <div class="container">
-        <div class="hero">
-            <div class="avatar">
-                <img src="https://avatars.githubusercontent.com/u/" alt="Profile photo">
-            </div>
-            <div>
-                <h1>Satish Soragaon</h1>
-                <p class="lead">Computer Science graduate • AI/ML enthusiast • Web developer</p>
+            /* Header / Hero */
+            header{display:flex;align-items:center;gap:18px;padding:28px;border-radius:14px;background:linear-gradient(135deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));backdrop-filter: blur(6px);}
+            .brand{display:flex;align-items:center;gap:16px}
+            .logo{width:84px;height:84px;border-radius:14px;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,var(--accent),#7c5cff);box-shadow:0 6px 30px rgba(0,212,255,0.08)}
+            .logo svg{width:44px;height:44px}
+            h1{margin:0;font-size:22px}
+            .role{color:var(--muted);margin-top:6px;font-size:13px}
+            nav{margin-left:auto;display:flex;gap:14px;align-items:center}
+            nav a{padding:8px 12px;border-radius:8px;font-weight:600;color:var(--muted)}
+            nav a:hover{background:var(--glass);color:var(--accent)}
+
+            /* Sections */
+            section{margin-top:22px;padding:22px;border-radius:12px;background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(0,0,0,0.02));box-shadow:0 8px 30px rgba(2,6,23,0.6)}
+            h2{margin:0 0 12px 0}
+            .grid{display:grid;grid-template-columns:1fr 320px;gap:20px}
+            .card{background:linear-gradient(180deg, rgba(255,255,255,0.01), rgba(255,255,255,0.02));padding:16px;border-radius:10px;border:1px solid rgba(255,255,255,0.03)}
+
+            /* About */
+            .about p{color:var(--muted);line-height:1.6}
+
+            /* Skills */
+            .skills{display:flex;flex-wrap:wrap;gap:10px}
+            .skill{background:rgba(255,255,255,0.02);padding:8px 12px;border-radius:999px;border:1px solid rgba(255,255,255,0.02);color:var(--muted);font-weight:600;font-size:13px}
+
+            /* Projects */
+            .projects{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+            .project{position:relative;overflow:hidden;padding:18px;border-radius:12px;background:linear-gradient(180deg,rgba(255,255,255,0.01),rgba(255,255,255,0.02));border:1px solid rgba(255,255,255,0.03);transition:transform .25s ease,box-shadow .25s ease}
+            .project:hover{transform:translateY(-8px);box-shadow:0 18px 40px rgba(2,6,23,0.6)}
+            .project .meta{display:flex;gap:10px;align-items:center;margin-bottom:8px}
+            .project h3{margin:0;font-size:16px}
+            .project p{margin:8px 0;color:var(--muted);font-size:14px;line-height:1.5}
+            .tech{display:flex;gap:8px;flex-wrap:wrap;margin-top:8px}
+            .chip{background:rgba(255,255,255,0.02);padding:6px 8px;border-radius:8px;border:1px solid rgba(255,255,255,0.03);font-size:12px;color:var(--muted)}
+            .highlight{grid-column:1/-1;display:flex;gap:18px}
+            .highlight .left{flex:1}
+            .highlight .right{width:360px}
+
+            /* Contact */
+            form{display:grid;gap:10px}
+            input,textarea{background:transparent;border:1px solid rgba(255,255,255,0.04);padding:10px;border-radius:8px;color:#e6eef6}
+            input::placeholder,textarea::placeholder{color:#6f7b86}
+            button{background:linear-gradient(90deg,var(--accent),#7c5cff);border:none;color:#02111a;padding:10px 12px;border-radius:8px;font-weight:700;cursor:pointer}
+
+            footer{margin:28px 0;text-align:center;color:var(--muted);font-size:13px}
+
+            /* Animations */
+            .fade{opacity:0;transform:translateY(8px);transition:all .6s cubic-bezier(.2,.9,.2,1)}
+            .fade.show{opacity:1;transform:none}
+
+            @media(max-width:900px){.grid{grid-template-columns:1fr}.projects{grid-template-columns:1fr}.highlight .right{width:100%}}
+            @media(max-width:520px){header{flex-direction:column;align-items:flex-start}.logo{width:64px;height:64px}.site{padding:16px}}
+        </style>
+    </head>
+    <body>
+        <div class="site">
+            <header class="fade" id="top">
+                <div class="brand">
+                    <div class="logo" aria-hidden="true">
+                        <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                            <defs>
+                                <linearGradient id="g" x1="0" x2="1">
+                                    <stop offset="0" stop-color="#00d4ff"/>
+                                    <stop offset="1" stop-color="#7c5cff"/>
+                                </linearGradient>
+                            </defs>
+                            <rect x="8" y="8" width="84" height="84" rx="16" fill="url(#g)" />
+                            <text x="50" y="58" font-size="42" text-anchor="middle" fill="#02111a" font-family="Inter, Arial" font-weight="700">S</text>
+                        </svg>
+                    </div>
+                    <div>
+                        <h1>Satish</h1>
+                        <div class="role">Computer Science Student — AI &amp; Machine Learning</div>
+                    </div>
+                </div>
                 <nav>
-                    <a href="#about">About</a>
-                    <a href="#skills">Skills</a>
-                    <a href="#projects">Projects</a>
-                    <a href="#contact">Contact</a>
+                    <a href="#about" data-scroll>About</a>
+                    <a href="#skills" data-scroll>Skills</a>
+                    <a href="#projects" data-scroll>Projects</a>
+                    <a href="#contact" data-scroll>Contact</a>
+                    <a href="#" onclick="window.open('https://github.com/satish-soragaon','_blank')">GitHub</a>
                 </nav>
-            </div>
+            </header>
+
+            <main>
+                <section id="about" class="about fade">
+                    <div class="grid">
+                        <div>
+                            <h2>About</h2>
+                            <p>I'm Satish, a final-year Computer Science student specializing in Artificial Intelligence and Machine Learning. I focus on building practical AI systems that pair robust research with production-ready engineering. I enjoy end-to-end work: data collection and processing, model development, efficient on-device deployment, and crafting accessible user experiences.</p>
+                            <p>Currently exploring lightweight ML for mobile and edge devices, efficient transformer applications for text understanding, and computer vision solutions for real-world needs.</p>
+                        </div>
+                        <aside class="card">
+                            <h3>Quick Info</h3>
+                            <p style="color:var(--muted);margin:8px 0">Vijayapur • Open to internships & collaborations</p>
+                            <div style="margin-top:8px">
+                                <strong style="display:block;margin-bottom:6px">Contact</strong>
+                                <a href="mailto:satish@example.com">satish@example.com</a>
+                            </div>
+                        </aside>
+                    </div>
+                </section>
+
+                <section id="skills" class="fade">
+                    <h2>Skills</h2>
+                    <div class="skills">
+                        <div class="skill">Python</div>
+                        <div class="skill">TensorFlow / TFLite</div>
+                        <div class="skill">PyTorch</div>
+                        <div class="skill">OpenCV</div>
+                        <div class="skill">Flutter</div>
+                        <div class="skill">NLP / Transformers</div>
+                        <div class="skill">Data Processing</div>
+                        <div class="skill">Docker</div>
+                    </div>
+                </section>
+
+                <section id="projects" class="fade">
+                    <h2>Projects</h2>
+                    <div class="projects">
+                        <!-- Highlighted main project -->
+                        <div class="project highlight">
+                            <div class="left card">
+                                <div class="meta">
+                                    <h3>AgriVision — Real-time pesticide residue detection</h3>
+                                </div>
+                                <p>AgriVision is a cross-platform solution (mobile and desktop) that detects pesticide residues on fruits using computer vision and machine learning. The system combines high-quality image preprocessing with a lightweight, optimized model to provide quick, on-device inference using TensorFlow Lite. A Flutter front-end enables a responsive user experience for field technicians and consumers, while a Python/OpenCV backend handles image enhancement and dataset curation.</p>
+                                <p>Key features include real-time on-device inference, adaptive preprocessing pipelines to handle varied lighting conditions, a model trained with augmented datasets to improve robustness, and an intuitive mobile UI for capturing and reviewing results. AgriVision is designed to be efficient, privacy-preserving, and deployable in low-connectivity environments.</p>
+                                <div class="tech" style="margin-top:12px">
+                                    <span class="chip">Python</span>
+                                    <span class="chip">TensorFlow Lite</span>
+                                    <span class="chip">Flutter</span>
+                                    <span class="chip">OpenCV</span>
+                                </div>
+                                <p style="margin-top:12px;color:var(--muted)">Role: Architected preprocessing pipeline, trained and optimized the model for TFLite, and integrated the ML stack with a Flutter client.</p>
+                                <p style="margin-top:10px"><a href="#" onclick="window.open('https://github.com/satish-soragaon/agrivision','_blank')">View repository</a></p>
+                            </div>
+                            <div class="right card">
+                                <h4>Quick demo</h4>
+                                <div style="height:200px;border-radius:8px;background:linear-gradient(180deg,rgba(255,255,255,0.01),rgba(0,0,0,0.12));display:flex;align-items:center;justify-content:center;color:var(--muted)">Mobile & Desktop • On-device inference</div>
+                                <h4 style="margin-top:12px">Impact</h4>
+                                <ul style="color:var(--muted);line-height:1.6;margin:8px 0;padding-left:18px">
+                                    <li>Enables rapid in-field screening for pesticide residues</li>
+                                    <li>Optimized for low-power devices with TFLite</li>
+                                    <li>Reduces reliance on lab testing for preliminary checks</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- Secondary project -->
+                        <div class="project card">
+                            <div class="meta">
+                                <h3>Fake News Detection using LLM</h3>
+                            </div>
+                            <p>This project applies transformer-based models and classical NLP techniques to detect misleading or fabricated news content. The system combines TF-IDF features and careful preprocessing with transformer embeddings to capture both lexical patterns and contextual semantics. The pipeline includes data collection, deduplication, label quality checks, and training with a focus on calibration to reduce false positives.</p>
+                            <p>The detection stack leverages established transformer encoders fine-tuned for classification, alongside feature-based models for explainability. Outputs include a probability score, a rationale produced from attention highlights, and suggestions for manual review when confidence is low.</p>
+                            <div class="tech">
+                                <span class="chip">Python</span>
+                                <span class="chip">NLP</span>
+                                <span class="chip">Transformers</span>
+                                <span class="chip">TF-IDF</span>
+                            </div>
+                            <p style="margin-top:10px;color:var(--muted)">Role: Implemented preprocessing, feature engineering, and fine-tuned transformer models; emphasized explainability and evaluation metrics tailored to misinformation detection.</p>
+                            <p style="margin-top:10px"><a href="#" onclick="window.open('https://github.com/satish-soragaon/fake-news-llm','_blank')">View repository</a></p>
+                        </div>
+
+                        <!-- Additional placeholder for future projects (kept meaningful) -->
+                        <div class="project card">
+                            <div class="meta">
+                                <h3>ML Deployment & Tools</h3>
+                            </div>
+                            <p>Collection of tools and utilities for model deployment, CI for ML workflows, Dockerized inference services, and lightweight dashboards for monitoring model performance in production.</p>
+                            <div class="tech"><span class="chip">Docker</span><span class="chip">Flask</span><span class="chip">Prometheus</span></div>
+                            <p style="margin-top:10px;color:var(--muted)">Role: Built deployment pipelines and monitoring dashboards to ensure model reliability after launch.</p>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="contact" class="fade">
+                    <h2>Contact</h2>
+                    <div class="grid">
+                        <div>
+                            <p style="color:var(--muted)">Interested in collaborating or have a question? Send a message or email me directly.</p>
+                            <p><strong>Email</strong><br><a href="mailto:satish@example.com">satish@example.com</a></p>
+                            <p><strong>Location</strong><br>Vijayapur, India</p>
+                        </div>
+                        <aside class="card">
+                            <form id="contactForm">
+                                <label for="name">Name</label>
+                                <input id="name" name="name" placeholder="Your name" required>
+                                <label for="email">Email</label>
+                                <input id="email" name="email" type="email" placeholder="you@domain.com" required>
+                                <label for="message">Message</label>
+                                <textarea id="message" name="message" rows="4" placeholder="Brief message" required></textarea>
+                                <button type="submit">Send message</button>
+                                <p id="status" style="color:var(--muted);margin:8px 0 0 0"></p>
+                            </form>
+                        </aside>
+                    </div>
+                </section>
+            </main>
+
+            <footer>
+                <div>© 2026 Satish — Built with focus on AI &amp; ML</div>
+            </footer>
         </div>
-    </div>
-</header>
 
-<main class="container">
-    <section id="about">
-        <h2>About Me</h2>
-        <p>I recently graduated with a degree in Computer Science from Vijayapur, specializing in Artificial Intelligence and Machine Learning. I build web and ML projects that solve real problems and help me learn end-to-end development.</p>
-        <div class="grid">
-            <div>
-                <h3>Education</h3>
-                <p><strong>Bachelor of Computer Science</strong><br>University Name — Graduated 2026</p>
-            </div>
-            <div>
-                <h3>Experience</h3>
-                <p><strong>Intern — AI Research</strong><br>Worked on model prototyping and data pipelines (3 months).</p>
-            </div>
-            <div class="full">
-                <h3>What I build</h3>
-                <p>Web apps, data-driven dashboards, and ML prototypes using Python, TensorFlow/PyTorch, and modern JavaScript frameworks.</p>
-            </div>
-        </div>
-    </section>
+        <script>
+            // Smooth scrolling for internal links
+            document.querySelectorAll('a[data-scroll]').forEach(a=>{
+                a.addEventListener('click', e=>{
+                    e.preventDefault();
+                    const id = a.getAttribute('href').slice(1);
+                    const el = document.getElementById(id);
+                    if(el) el.scrollIntoView({behavior:'smooth',block:'start'});
+                })
+            })
 
-    <section id="skills">
-        <h2>Skills</h2>
-        <div class="grid">
-            <div>
-                <h4>Programming</h4>
-                <div class="skill">Python <div class="bar"><i style="width:90%"></i></div></div>
-                <div class="skill">JavaScript <div class="bar"><i style="width:75%"></i></div></div>
-                <div class="skill">C/C++ <div class="bar"><i style="width:60%"></i></div></div>
-            </div>
-            <div>
-                <h4>Machine Learning</h4>
-                <div class="skill">Modeling <div class="bar"><i style="width:80%"></i></div></div>
-                <div class="skill">Data Processing <div class="bar"><i style="width:80%"></i></div></div>
-                <div class="skill">Deployment <div class="bar"><i style="width:55%"></i></div></div>
-            </div>
-        </div>
-    </section>
+            // Simple reveal on scroll
+            const observer = new IntersectionObserver((entries)=>{
+                entries.forEach(entry=>{
+                    if(entry.isIntersecting) entry.target.classList.add('show');
+                })
+            },{threshold:0.12});
+            document.querySelectorAll('.fade').forEach(el=>observer.observe(el));
 
-    <section id="projects" class="projects">
-        <h2>Projects</h2>
-        <div class="project">
-            <h3><a href="#" target="_blank">Smart Notes — Web app</a></h3>
-            <p>A note-taking web app with tagging and search powered by a lightweight ML-based summarizer.</p>
-            <div class="tags"><span class="tag">React</span><span class="tag">Node.js</span><span class="tag">Python</span><span class="tag">ML</span></div>
-        </div>
-        <div class="project" style="margin-top:12px">
-            <h3><a href="#" target="_blank">Image Classifier</a></h3>
-            <p>Transfer learning model that classifies images with a Flask API and simple UI demo.</p>
-            <div class="tags"><span class="tag">TensorFlow</span><span class="tag">Flask</span><span class="tag">Docker</span></div>
-        </div>
-        <p style="margin-top:12px;color:var(--muted)">More projects on <a href="https://github.com/satish-soragaon" target="_blank">GitHub</a>.</p>
-    </section>
-
-    <section id="contact">
-        <h2>Contact</h2>
-        <p>If you'd like to work together or have questions, send a message or email me directly.</p>
-        <div class="grid">
-            <div>
-                <h4>Get in touch</h4>
-                <p>Email: <a href="mailto:satish@example.com">satish@example.com</a></p>
-                <p class="social">
-                    <a href="https://github.com/satish-soragaon" target="_blank">GitHub</a>
-                    <a href="#" target="_blank">LinkedIn</a>
-                </p>
-                <p><a href="/resume.pdf" target="_blank">Download Resume</a></p>
-            </div>
-            <div>
-                <h4>Message</h4>
-                <form id="contactForm">
-                    <label for="name">Name</label>
-                    <input id="name" name="name" required placeholder="Your name">
-                    <label for="email">Email</label>
-                    <input id="email" name="email" type="email" required placeholder="you@domain.com">
-                    <label for="message">Message</label>
-                    <textarea id="message" name="message" rows="5" required placeholder="Brief message"></textarea>
-                    <button type="submit">Send</button>
-                </form>
-                <p id="formStatus" style="color:var(--muted);margin-top:8px"></p>
-            </div>
-        </div>
-    </section>
-</main>
-
-<footer>
-    <div class="container">
-        <p>© 2026 Satish Soragaon • Built with care</p>
-    </div>
-</footer>
-
-<script>
-document.getElementById('contactForm').addEventListener('submit', function(e){
-    e.preventDefault();
-    const name = document.getElementById('name').value.trim();
-    const email = document.getElementById('email').value.trim();
-    const message = document.getElementById('message').value.trim();
-    const status = document.getElementById('formStatus');
-    if(!name||!email||!message){ status.textContent='Please fill all fields.'; return }
-    // Fallback: open default mail client
-    const mailto = `mailto:satish@example.com?subject=${encodeURIComponent('Portfolio contact from '+name)}&body=${encodeURIComponent(message+'\n\nFrom: '+name+' <'+email+'>')}`;
-    window.location.href = mailto;
-    status.textContent = 'Opening mail client...';
-});
-</script>
-
-</body>
+            // Contact form: mailto fallback
+            document.getElementById('contactForm').addEventListener('submit', function(e){
+                e.preventDefault();
+                const name = document.getElementById('name').value.trim();
+                const email = document.getElementById('email').value.trim();
+                const message = document.getElementById('message').value.trim();
+                const status = document.getElementById('status');
+                if(!name||!email||!message){ status.textContent='Please fill all fields.'; return }
+                const subject = encodeURIComponent('Portfolio contact from '+name);
+                const body = encodeURIComponent(message + '\n\n' + name + ' <' + email + '>');
+                // Attempt to open mail client
+                window.location.href = `mailto:satish@example.com?subject=${subject}&body=${body}`;
+                status.textContent = 'Opening your mail client...';
+            });
+        </script>
+    </body>
 </html>
