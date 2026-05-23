@@ -172,23 +172,9 @@
                                 <p>AgriVision is a machine learning-based application designed to detect pesticide residues on fruits through advanced image processing techniques. This system employs robust image preprocessing methods in conjunction with a Convolutional Neural Network (CNN) model to analyze fruit images, classifying them as either contaminated or safe. Developed as a practical prototype, AgriVision is specifically focused on real-world agricultural applications, providing a tangible solution for food safety assessment.</p>
                                 <p></p>
                                 <div class="tech" style="margin-top:12px">
-                                    <span class="chip">Python</span>
-                                    <span class="chip">TensorFlow Lite</span>
-                                    <span class="chip">Flutter</span>
-                                    <span class="chip">OpenCV</span>
                                 </div>
                                 <p style="margin-top:12px;color:var(--muted)">Role: Architected preprocessing pipeline, trained and optimized the model for TFLite, and integrated the ML stack with a Flutter client.</p>
                                 <p style="margin-top:10px"><a href="#" onclick="window.open('https://github.com/satish-soragaon/agrivision','_blank')">View repository</a></p>
-                            </div>
-                            <div class="right card">
-                                <h4>Quick demo</h4>
-                                <div style="height:200px;border-radius:8px;background:linear-gradient(180deg,rgba(255,255,255,0.01),rgba(0,0,0,0.12));display:flex;align-items:center;justify-content:center;color:var(--muted)">Mobile & Desktop • On-device inference</div>
-                                <h4 style="margin-top:12px">Impact</h4>
-                                <ul style="color:var(--muted);line-height:1.6;margin:8px 0;padding-left:18px">
-                                    <li>Enables rapid in-field screening for pesticide residues</li>
-                                    <li>Optimized for low-power devices with TFLite</li>
-                                    <li>Reduces reliance on lab testing for preliminary checks</li>
-                                </ul>
                             </div>
                         </div>
 
@@ -199,23 +185,9 @@
                             </div>
                             <p>The Fake News Detection system is a natural language processing-based solution engineered to classify news articles as real or fake. It leverages TF-IDF for efficient feature extraction and utilizes a Passive Aggressive Classifier for accurate categorization. Furthermore, the integration of a Large Language Model (LLM) significantly enhances contextual understanding and deepens the analysis of news content, contributing to more reliable detection of misinformation.</p>
                             <div class="tech">
-                                <span class="chip">Python</span>
-                                <span class="chip">NLP</span>
-                                <span class="chip">Transformers</span>
-                                <span class="chip">TF-IDF</span>
                             </div>
                             <p style="margin-top:10px;color:var(--muted)">Role: Implemented preprocessing, feature engineering, and fine-tuned transformer models; emphasized explainability and evaluation metrics tailored to misinformation detection.</p>
                             <p style="margin-top:10px"><a href="#" onclick="window.open('https://github.com/satish-soragaon/fake-news-llm','_blank')">View repository</a></p>
-                        </div>
-
-                        <!-- Additional placeholder for future projects (kept meaningful) -->
-                        <div class="project card">
-                            <div class="meta">
-                                <h3>ML Deployment & Tools</h3>
-                            </div>
-                            <p>Collection of tools and utilities for model deployment, CI for ML workflows, Dockerized inference services, and lightweight dashboards for monitoring model performance in production.</p>
-                            <div class="tech"><span class="chip">Docker</span><span class="chip">Flask</span><span class="chip">Prometheus</span></div>
-                            <p style="margin-top:10px;color:var(--muted)">Role: Built deployment pipelines and monitoring dashboards to ensure model reliability after launch.</p>
                         </div>
                     </div>
                 </section>
@@ -231,14 +203,14 @@
                             <p><strong>Location</strong><br>Vijayapur, India</p>
                         </div>
                         <aside class="card">
-                            <form id="contactForm">
+                            <form id="contactForm" action="https://formspree.io/f/yourformid" method="POST">
                                 <label for="name">Name</label>
                                 <input id="name" name="name" placeholder="Your name" required>
                                 <label for="email">Email</label>
                                 <input id="email" name="email" type="email" placeholder="you@domain.com" required>
                                 <label for="message">Message</label>
                                 <textarea id="message" name="message" rows="4" placeholder="Brief message" required></textarea>
-                                <button type="submit">Send message</button>
+                                <button type="submit" name="submit">Send message</button>
                                 <p id="status" style="color:var(--muted);margin:8px 0 0 0"></p>
                             </form>
                         </aside>
@@ -270,19 +242,10 @@
             },{threshold:0.12});
             document.querySelectorAll('.fade').forEach(el=>observer.observe(el));
 
-            // Contact form: mailto fallback
-            document.getElementById('contactForm').addEventListener('submit', function(e){
-                e.preventDefault();
-                const name = document.getElementById('name').value.trim();
-                const email = document.getElementById('email').value.trim();
-                const message = document.getElementById('message').value.trim();
+            // Client-side validation for the contact form (optional, Formspree also validates)
+            document.getElementById('contactForm').addEventListener('submit', function(e) {
                 const status = document.getElementById('status');
-                if(!name||!email||!message){ status.textContent='Please fill all fields.'; return }
-                const subject = encodeURIComponent('Portfolio contact from '+name);
-                const body = encodeURIComponent(message + '\n\n' + name + ' <' + email + '>');
-                // Attempt to open mail client
-                window.location.href = `mailto:satishsoragaon@gmail.com?subject=${subject}&body=${body}`;
-                status.textContent = 'Opening your mail client...';
+                if (!this.name.value || !this.email.value || !this.message.value) { status.textContent = 'Please fill all fields.'; e.preventDefault(); }
             });
         </script>
     </body>
